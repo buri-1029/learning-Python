@@ -7,15 +7,16 @@ a_boolean = True    # <-> False
 a_none = None       # 존재하지 않는다.
 print(type(a_none))
 
-# list (sequence & mutable)
+# list : sequence & mutable
 days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 days.append("Sun")      # 마지막에 요소 추가
 print(len(days))        # 7
 print(days[0])          # Mon
+print(days[0:2])        # Mon Tue
+print(days[0:5:2])      # Mon Wed Fri
 print("Mon" in days)    # True
-print("Man" in days)  # False
+print("Man" in days)    # False
 
-# ...
 # list.reverse() - 역순
 # list.remove(값) - 가장 처음 나타나는 값 삭제
 # list.insert(i,값) - i번째에 값 삽입
@@ -23,7 +24,32 @@ print("Man" in days)  # False
 # list.index(값) - 값의 인덱스 출력
 # list.pop() - 가장 마지막 인덱스의 값 꺼내고 삭제
 # list.extend([또다른리스트]) - list + 또다른리스트 확장
+# ...
 
-# tuple (sequence & immutable)
+# Tuples and Dicts
+# tuple : sequence & immutable
 days = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat")
 print(type(days))
+
+
+# dictionary
+buhee = {
+    "name": "buhee",
+    "age": 26,
+    "korean": True,
+    "fav_fruit": ["Apple", "Banana"]
+}
+print(buhee)
+buhee["female"] = True
+print(buhee)
+
+
+# Built in Functions
+age = "100"
+print(len(age))     # 3
+print(type(age))    # String
+n_age = int(age)    # 타입 변환
+print(type(n_age))  # int
+
+
+# Function()
