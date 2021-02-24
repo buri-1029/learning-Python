@@ -7,7 +7,7 @@ a_boolean = True    # <-> False
 a_none = None       # 존재하지 않는다.
 print(type(a_none))
 
-# list (list는 sequence지만 Mutable이지)
+# list (sequence & mutable)
 days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 days.append("Sun")      # 마지막에 요소 추가
 print(len(days))        # 7
@@ -23,3 +23,7 @@ print("Man" in days)  # False
 # list.index(값) - 값의 인덱스 출력
 # list.pop() - 가장 마지막 인덱스의 값 꺼내고 삭제
 # list.extend([또다른리스트]) - list + 또다른리스트 확장
+
+# tuple (sequence & immutable)
+days = ("Mon", "Tue", "Wed", "Thu", "Fri", "Sat")
+print(type(days))
