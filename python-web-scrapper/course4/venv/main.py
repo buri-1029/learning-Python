@@ -16,16 +16,15 @@ def search():
     word = request.args.get('word')
     if word:
         word = word.lower()  # 소문자로 변환
-        jobs = get_jobs(word)
         # print(jobs)
 
         # 4.5 다시 듣기
         # 누군가 'python'을 검색했었다면,
         # 또 다른 누군가 같은 단어를 검색해도 fake DB에 
         # 해당 단어가 저장되어 있기 때문에 스크래퍼를 안 돌려도 된다. 
-        fromDB = db.get(word)
-        if fromDB:
-            jobs = fromDB
+        existingJobs = db.get(word)
+        if existingJobs:
+            jobs = existingJobs
         else:
             jobs = get_jobs(word)
             db[word] = jobs
@@ -34,7 +33,7 @@ def search():
 
     # rendering 작업
     return render_template("result.html", searchingBy=word,
-      resultNumber=len(jobs), test="hi")
+      resultNumber=len(jobs), jobs=jobs, test="hi")
     # return f"You are looking for a job in {word}"
 
 
