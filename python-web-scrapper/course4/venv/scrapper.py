@@ -14,8 +14,7 @@ def extract_job(html):
     title = html.find("h2").find("a")["title"]
     company, location = html.find("h3").find_all(
         "span", recursive=False)  # recursive : 전부 가져오는 걸 방지
-    company = company.get_text(
-        strip=True)  # .strip("-").strip(" \r").strinp("\n")
+    company = company.get_text(strip=True)  
     location = location.get_text(strip=True)
     job_id = html['data-jobid']
 
@@ -30,7 +29,7 @@ def extract_job(html):
 def extract_jobs(last_page, url):
     jobs = []
     for page in range(last_page):
-        # print(f"Scrapping So: Page {page}")
+        print(f"Scrapping So: Page {page}")
         result = requests.get(f"{url}&pg={page+1}")
         soup = BeautifulSoup(result.text, "html.parser")
         results = soup.find_all("div", {"class": "-job"})
