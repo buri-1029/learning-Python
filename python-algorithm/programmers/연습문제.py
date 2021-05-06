@@ -1,5 +1,11 @@
+# 정수 내림차순으로 배치하기
+def solution1(n):
+    return int(''.join(sorted(str(n), reverse=True)))
+
 # 콜라츠 추측
-def solution1(num):
+
+
+def solution2(num):
     answer = 0
     while(num != 1):
         if num % 2 == 0:
@@ -12,23 +18,23 @@ def solution1(num):
 
 
 # 하샤드 수
-def solution2(x):
+def solution3(x):
     return not (x % sum([int(i) for i in str(x)]))
 
 
 # 핸드폰 번호 가리기
-def solution3(phone_number):
+def solution4(phone_number):
     return "*"*(len(phone_number)-4) + phone_number[-4:]
 
 
 # 문자열 내 마음대로 정렬하기
-def solution4(strings, n):
+def solution5(strings, n):
     strings.sort()
     return sorted(strings, key=lambda x: x[n])
 
 
 # 시저 암호
-def solution5(s, n):
+def solution6(s, n):
     answer = ''
     for i in range(len(s)):
         if s[i] == ' ':
@@ -40,8 +46,18 @@ def solution5(s, n):
     return answer
 
 
+# 약수의 합
+def solution7(n):
+    sum = 0
+    for i in range(1, n+1):
+        if n % i == 0:
+            sum += i
+    return sum
+
 # 자연수 뒤집어 배열로 만들기
-def solution6(n):
+
+
+def solution8(n):
     return [int(i) for i in str(n)][::-1]
 
 # arr=[]
