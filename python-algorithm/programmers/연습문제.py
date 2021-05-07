@@ -1,10 +1,12 @@
+import math
+
+
 # 정수 내림차순으로 배치하기
 def solution1(n):
     return int(''.join(sorted(str(n), reverse=True)))
 
+
 # 콜라츠 추측
-
-
 def solution2(num):
     answer = 0
     while(num != 1):
@@ -54,9 +56,8 @@ def solution7(n):
             sum += i
     return sum
 
+
 # 자연수 뒤집어 배열로 만들기
-
-
 def solution8(n):
     return [int(i) for i in str(n)][::-1]
 
@@ -64,3 +65,8 @@ def solution8(n):
 # for i in str(n):
 #   arr.append(int(i))
 # print(arr[::-1])
+
+
+# 정수 제곱근 판별
+def solution(n):
+    return pow(math.sqrt(n)+1, 2) if int(math.sqrt(n)) == math.sqrt(n) else -1
